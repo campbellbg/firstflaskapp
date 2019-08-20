@@ -1,7 +1,7 @@
 # This script looks at the use of JWT's in our APIs
 
-from Section6.models.user_model import UserModel
-from Section6.db_setup import get_database
+from models.user_model import UserModel
+from db_setup import get_database
 
 
 # Check that the user exists and that the password is correct

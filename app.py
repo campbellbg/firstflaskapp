@@ -5,12 +5,12 @@ from flask import Flask
 from flask_restful import Api
 from flask_jwt import JWT
 
-from Section6.security import authenticate, identity  # These are the functions from the security.py file
-from Section6.db_setup import get_database
+from security import authenticate, identity  # These are the functions from the security.py file
+from db_setup import get_database
 
-from Section6.resources.item import Item, Items
-from Section6.resources.user import User
-from Section6.resources.store import Store, Stores
+from resources.item import Item, Items
+from resources.user import User
+from resources.store import Store, Stores
 
 my_app = Flask('Bryan App')
 my_app.secret_key = 'bob' # This would obviously not be done this way in Production code

@@ -1,5 +1,5 @@
-from Section6.db_setup import db_sql # Import here to avoid the circular imports
-from Section6.app import my_app
+from db_setup import db_sql # Import here to avoid the circular imports
+from app import my_app
 
 
 # This is a Flask decorator it is not from flask_restful
