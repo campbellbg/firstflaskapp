@@ -18,13 +18,6 @@ my_app.secret_key = 'bob' # This would obviously not be done this way in Product
 my_app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 my_app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + get_database()
 
-
-# This is a Flask decorator it is not from flask_restful
-@my_app.before_first_request
-def setup_db():
-    db_sql.create_all()
-
-
 my_api = Api(my_app)
 
 # This creates a /auth end-point automatically
@@ -32,7 +25,7 @@ my_api = Api(my_app)
 my_jwt = JWT(app=my_app, authentication_handler=authenticate, identity_handler=identity)
 
 # Setup the database
-#setup_database(purge_records = True)
+# setup_database(purge_records = True)
 
 my_api.add_resource(Item, '/item/<string:item_name>')
 my_api.add_resource(Items, '/items')
@@ -41,11 +34,5 @@ my_api.add_resource(Store, '/store/<string:store_name>')
 my_api.add_resource(Stores, '/stores')
 
 
-if __name__ == '__main__':
-
-    from Section6.db_setup import db_sql # Import here to avoid the circular imports
-
-    db_sql.init_app(my_app)
-    my_app.run(port=5555)
 
 
