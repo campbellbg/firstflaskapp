@@ -1,7 +1,7 @@
 # The store 'controller'. Contains the Class that extends the flask_restful Resource
 
 from flask_restful import Resource, reqparse
-from Section6.models.store_model import StoreModel
+from models.store_model import StoreModel
 
 
 class Stores(Resource):

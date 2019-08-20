@@ -2,7 +2,7 @@
 # rather that interact with the database and return ItemModel objects to the API methods, for presentation as JSON
 
 #import sqlite3
-from Section6.db_setup import db_sql
+from db_setup import db_sql
 
 
 # Extend SQLAlchemy Model. This will tie the Class with the SQL Alchemy object

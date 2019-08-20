@@ -3,8 +3,8 @@
 from flask_restful import Resource, reqparse
 from flask_jwt import jwt_required
 
-from Section6.models.item_model import ItemModel
-from Section6.db_setup import get_database
+from models.item_model import ItemModel
+from db_setup import get_database
 
 db_name = get_database()
 

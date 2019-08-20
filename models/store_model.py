@@ -1,7 +1,7 @@
 # The Store Class. Most of these methods are class methods, the don't really operate of an instance of an object
 # rather that interact with the database and return ClassModel objects to the API methods, for presentation as JSON
 
-from Section6.db_setup import db_sql
+from db_setup import db_sql
 
 
 # Extend SQLAlchemy Model. This will tie the Class with the SQL Alchemy object

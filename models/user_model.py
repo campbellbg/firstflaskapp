@@ -1,5 +1,5 @@
 import sqlite3
-from Section6.db_setup import db_sql
+from db_setup import db_sql
 
 
 # This class is just being used for the security script, which requires it. Use dictionaries for the API calls
