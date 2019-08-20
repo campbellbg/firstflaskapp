@@ -9,4 +9,4 @@ def setup_db():
 
 
 db_sql.init_app(my_app)
-my_app.run(port=5555)
+#my_app.run(port=5555)
