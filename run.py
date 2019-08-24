@@ -9,4 +9,7 @@ def setup_db():
 
 
 db_sql.init_app(my_app)
-#my_app.run(port=5555)
+
+# Only run this if we are executing this script directly. Ensures that it does not fire with hosted in Heroku
+if __name__ == '__main__':
+    my_app.run(port=5555)
