@@ -35,9 +35,13 @@ class ItemModel(db_sql.Model):
         # If the name doesn't already exist then add the row to the database using an object
         if not cls.get_item(item_name):
             new_item = cls(None, item_name, item_price, store_id)
-            db_sql.session.add(new_item)
-            db_sql.session.commit()
-            return new_item
+
+            try:
+                db_sql.session.add(new_item)
+                db_sql.session.commit()
+                return new_item
+            except:
+                return None
         else:
             return None
 
