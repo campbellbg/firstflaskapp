@@ -1,6 +1,9 @@
 # For section 5 of the course where we start adding SQLite capabilities
 # A lot of this code has been copied from Section 4 and then changed to align with the SQLITE DB
 
+# This will allow us to get environment variables
+import os
+
 from flask import Flask
 from flask_restful import Api
 from flask_jwt import JWT
@@ -16,7 +19,10 @@ my_app = Flask('Bryan App')
 my_app.secret_key = 'bob' # This would obviously not be done this way in Production code
 
 my_app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-my_app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + get_database()
+
+# Changed database to postgreSQL that was provisioned in Heroku
+# my_app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + get_database()
+my_app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///' + get_database())
 
 my_api = Api(my_app)
 
